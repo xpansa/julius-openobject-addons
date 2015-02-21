@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#################################################################################
+###############################################################################
 #
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2013 Julius Network Solutions SARL <contact@julius.fr>
@@ -17,7 +17,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#################################################################################
+###############################################################################
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
@@ -31,7 +31,12 @@ class product_product(orm.Model):
     _inherit = "product.product"
     
     _columns = {
-        'tag_ids' : fields.many2many('product.tag', 'product_product_tag_rel', 'tag_id', 'product_id', 'Tags'),
+        'tag_ids' : fields.many2many('product.tag',
+        'product_product_tag_rel',
+        'tag_id',
+        'product_id',
+        'Tags'
+        ),
     }
     
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
