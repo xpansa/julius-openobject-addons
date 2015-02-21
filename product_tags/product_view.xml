@@ -44,14 +44,14 @@
             groups="base.group_no_one"
             id="menu_product_tag_action_form"
             parent="product.prod_config_main" sequence="3"/>
-	
         <record id="product_product_tag_search_inherit" model="ir.ui.view">
             <field name="name">product.product.tag.view.search</field>
             <field name="model">product.product</field>
             <field name="inherit_id" ref="product.product_search_form_view"/>
             <field name="arch" type="xml">
                 <field name="name" position="after">
-                    <field name="tag_ids" string="Tags" filter_domain="[('tag_ids','ilike',self)]"/>
+                    <field name="tag_ids" string="Tags" filter_domain=\
+                    "[('tag_ids','ilike',self)]"/>
                 </field>
             </field>
         </record>
@@ -62,7 +62,8 @@
             <field name="inherit_id" ref="product.product_normal_form_view"/>
             <field name="arch" type="xml">
                 <field name="name" position="after">
-                    <field name="tag_ids" widget="many2many_tags" placeholder="Tags..."/>
+                    <field name="tag_ids" widget="many2many_tags" \
+                    placeholder="Tags..."/>
                 </field>
             </field>
         </record>
