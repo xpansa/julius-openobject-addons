@@ -27,11 +27,12 @@ class product_tag(orm.Model):
         'name': fields.char('Tag Name', required=True, size=64),
     }
 
-class product_product(orm.Model):
-    _inherit = "product.product"
-    
+
+class product_template(orm.Model):
+    _inherit = "product.template"
+
     _columns = {
         'tag_ids' : fields.many2many('product.tag', 'product_product_tag_rel', 'tag_id', 'product_id', 'Tags'),
     }
-    
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
